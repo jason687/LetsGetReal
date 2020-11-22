@@ -52,4 +52,25 @@ public class RationalNumber extends RealNumber {
     numerator = numerator / gcd;
     denominator = denominator / gcd;
   }
+
+  public RationalNumber multiply (RationalNumber other) {
+    RationalNumber product = new RationalNumber (numerator * other.getNumerator(), denominator * other.getDenominator());
+    return product;
+  }
+
+  public RationalNumber divide (RationalNumber other) {
+    other = other.reciprocal();
+    RationalNumber quotient = new RationalNumber (numerator * other.getNumerator(), denominator * other.getDenominator());
+    return quotient;
+  }
+
+  public RationalNumber add (RationalNumber other) {
+    RationalNumber sum = new RationalNumber ((numerator * other.getDenominator() + other.getNumerator() * denominator), denominator * other.getDenominator());
+    return sum;
+  }
+
+  public RationalNumber subtract (RationalNumber other) {
+    RationalNumber difference = new RationalNumber ((numerator * other.getDenominator() - other.getNumerator() * denominator), denominator * other.getDenominator());
+    return difference;
+  }
 }
