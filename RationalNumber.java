@@ -3,9 +3,14 @@ public class RationalNumber extends RealNumber {
 
   public RationalNumber (int nume, int deno) {
     super((nume + 0.0) / deno);
-    numerator = nume;
-    denominator = deno;
-    reduce();
+    if (deno == 0) {
+      numerator = 0;
+      denominator = 1;
+    } else {
+      numerator = nume;
+      denominator = deno;
+      reduce();
+    }
   }
 
   public double getValue () {
@@ -30,6 +35,10 @@ public class RationalNumber extends RealNumber {
   }
 
   public String toString () {
+    if (denominator < 0) {
+      denominator = denominator * -1;
+      numerator = numerator * -1;
+    }
     return (numerator + "/" + denominator);
   }
 
