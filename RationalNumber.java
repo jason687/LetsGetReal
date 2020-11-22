@@ -5,6 +5,7 @@ public class RationalNumber extends RealNumber {
     super((nume + 0.0) / deno);
     numerator = nume;
     denominator = deno;
+    reduce();
   }
 
   public double getValue () {
@@ -44,5 +45,11 @@ public class RationalNumber extends RealNumber {
       z = rem;
     }
     return y;
+  }
+
+  private void reduce () {
+    int gcd = gcd(numerator, denominator);
+    numerator = numerator / gcd;
+    denominator = denominator / gcd;
   }
 }
