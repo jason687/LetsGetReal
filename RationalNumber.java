@@ -18,4 +18,9 @@ public class RationalNumber extends RealNumber {
   public int getDenominator () {
     return denominator;
   }
+
+  public RationalNumber reciprocal () {
+    RationalNumber a = new RationalNumber (denominator, numerator);
+    return a;
+  }
 }
