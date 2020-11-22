@@ -31,4 +31,18 @@ public class RationalNumber extends RealNumber {
   public String toString () {
     return (numerator + "/" + denominator);
   }
+
+  private static int gcd (int a, int b) {
+    int y = Math.max(a, b);
+    int z = Math.min(a, b);
+    int factor = 0;
+    int rem = -1;
+    while (rem != 0) {
+      factor = y / z;
+      rem = y - factor * z;
+      y = z;
+      z = rem;
+    }
+    return y;
+  }
 }
