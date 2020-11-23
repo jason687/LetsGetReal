@@ -39,6 +39,9 @@ public class RationalNumber extends RealNumber {
       denominator = denominator * -1;
       numerator = numerator * -1;
     }
+    if (denominator == 1) {
+      return (numerator + "");
+    }
     return (numerator + "/" + denominator);
   }
 
