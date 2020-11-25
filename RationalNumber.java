@@ -7,9 +7,14 @@ public class RationalNumber extends RealNumber {
       numerator = 0;
       denominator = 1;
     } else {
-      numerator = nume;
-      denominator = deno;
-      reduce();
+      if (nume == 0) {
+        denominator = 1;
+        numerator = nume;
+      } else {
+        numerator = nume;
+        denominator = deno;
+        reduce();
+      }
     }
   }
 
